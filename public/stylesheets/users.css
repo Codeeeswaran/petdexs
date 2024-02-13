@@ -1,0 +1,181 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Trip Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ header .link-container ul {
+    display: flex;
+    gap: 100px;
+}
+
+li {
+    list-style: none;
+    font-size: small;
+    font-weight: bolder;
+}
+
+ header a  {
+    text-decoration:none;
+    color: black;
+}
+footer a  {
+    text-decoration:none;
+    color:white;
+}
+
+a:hover  {
+    text-decoration:none;
+    color: red;
+    
+}
+
+a {
+    text-decoration: none;
+}
+ 
+.button-container {
+    display: flex;
+    gap:5px;
+}
+
+
+.login {
+    padding: 2px 15px;
+    border:none;
+    color: white;
+    background-color: black;
+}
+
+.login:hover {
+    color: black;
+    background-color: red;
+}
+
+.signup {
+    padding: 2px 9px;
+    border-width: 3px;
+    color: black;
+    background-color: white;
+}
+
+.signup:hover {
+    color: white;
+    background-color:red;
+}
+
+.svg-insta {
+    background-color: red;
+    color: red;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background-color:white; 
+    border-radius: 50%;
+    padding:10px
+}
+
+.circle:hover {
+    
+    background-color:red; 
+    
+}
+
+.svg {
+    display: flex;
+    gap: 10px;
+}
+
+footer 
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black; 
+    height: 150px;
+}
+
+footer .link-container ul {
+    display: flex;
+    gap: 100px;
+    
+   
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin: 100px;
+}
+
+.description {
+    display: flex;
+    gap: 50px;
+    
+}
+
+.buyer,.seller{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -10px;
+  color:white;
+  background-color: red;
+  border-width: 4px;
+  border-style: solid;
+  border-color:black;
+  padding: 50px 100px;
+  padding-bottom: 100px;
+
+}
+
+.buyer:hover,.seller:hover{
+    color:black;
+    background-color:white;
+}
+
+.head {
+    font-size: 40px;
+    margin-bottom: -40px;
+    
+}
+
+.descri{
+    display: flex;
+    flex-direction: column;
+    font-size: 19px;
+    align-items: center;
+    gap: 8px;
+}
+
+p{
+    margin-bottom: -6px;
+    margin-top: -6px;
+    
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1 p {
+    margin-top: -50px;
+    margin-bottom: -30px;
+}
