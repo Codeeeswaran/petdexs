@@ -14,36 +14,14 @@
 </head>
 <body>
     <!-- Header section containing the logo, navigation links, and buttons -->
-    <header>
-        <!-- Logo section with an SVG logo -->
-        <div class="logo">
-            <object type="image/svg+xml" data="/images/bl.svg">
-                company logo
-            </object>
-        </div>
-        <!-- Navigation links section -->
-        <div class="link-container">
-            <ul>
-                <!-- Navigation links -->
-                <li><a href="/home/index.html">home</a></li>
-                <li><a href="/about/index.html">about</a></li>
-                <li><a href="/contact/index.html">contact</a></li>
-            </ul>
-        </div>
-        <!-- Button container with login and signup buttons -->
-        <div class="button-container">
-            <!-- <button class="login">log in</button>
-            <button class="signup">sign up</button> -->
-        </div>
-    </header>
-
+    <%- include('components/nav') %>
        <div class="content">
         <div class="heading">
             <h1>Welcome to petdex To tailer your experience,please</h1>
             <h1><p>select the option that best describes you:</p></h1>
         </div>
        <div class="description">
-        <a href="/buyer/signup">
+        <a href="<%= (login) ? '/buyer/login' : '/buyer/signup' %>">
             <div class="buyer">
                 <div class="head"><h2>BUYER</h2></div>
                 <div class="descri">
@@ -54,7 +32,7 @@
                 </div>  
             </div>
         </a>
-        <a href="/seller/signup">
+        <a href="<%= (login) ? '/seller/login' : '/seller/signup' %>">
             <div class="seller">
                 <div class="head"><h2>SELLER</h2></div>
                    <div class="descri">
@@ -71,37 +49,6 @@
 
 
     <!-- Footer section -->
-    <footer>
-        <!-- Logo section in the footer -->
-        <div class="logo">
-            <object type="image/svg+xml" data="/images/wh.svg">
-                company logo
-            </object>
-        </div>
-        <!-- Navigation links section in the footer -->
-        <div class="link-container">
-            <ul>
-                <!-- Footer navigation links -->
-                <li><a href="/home/index.html">home</a></li>
-                <li><a href="/about/index.html">about</a></li>
-                <li><a href="/contact/index.html">contact</a></li>
-            </ul>
-        </div>
-        <!-- Social media icons section in the footer -->
-        <div class="svg">
-            <!-- First circle with an Instagram logo -->
-            <div class="circle">
-                <object type="image/svg+xml" data="/images/Vector-1.svg">
-                    instagram logo
-                </object>
-            </div>
-            <!-- Second circle with a LinkedIn logo -->
-            <div class="circle"> 
-                <object type="image/svg+xml" data="/images/Vector.svg">
-                    linkedin logo
-                </object>
-            </div>
-        </div>
-    </footer>
+    <%- include('components/footer') %>
 </body>
 </html>

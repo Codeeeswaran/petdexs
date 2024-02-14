@@ -13,22 +13,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <object type="image/svg+xml" data="/images/bl.svg">company logo</object>
-      </div>
-      <div class="link-container">
-        <ul>
-          <li><a href="/home/index.html">home</a></li>
-          <li><a href="/about/index.html">about</a></li>
-          <li><a href="/contact/index.html">contact</a></li>
-        </ul>
-      </div>
-      <div class="button-container">
-        <a href="/loginfor/index.html"><button class="login">log in</button></a>
-        <a href="/signup/index.html"><button class="signup">sign up</button></a>
-      </div>
-    </header>
+   <%- include('components/nav') %>
     <div class="content">
       <div class="welcome"><p>welcome to</p></div>
       <div class="heading"><h1>PETDEX</h1></div>
@@ -42,43 +27,11 @@
         <p class="hi">to find your ideal pet companion.</p>
       </div>
       <div class="start-btn">
-        <a href="/users"
+        <a href="/users/login"
           ><button class="start">start now</button></a
         >
       </div>
     </div>
-    <footer>
-      <div class="logo">
-        <object id="hdlogo" type="image/svg+xml" data="/images/wh.svg">
-          company logo
-        </object>
-      </div>
-      <div class="link-container">
-        <ul>
-          <li><a href="/home/index.html">home</a></li>
-          <li><a href="/about/index.html">about</a></li>
-          <li><a href="/contact/index.html">contact</a></li>
-        </ul>
-      </div>
-      <div class="hidden">
-        <div class="llogo">
-          <object type="image/svg+xml" data="/images/wh.svg">
-            company logo
-          </object>
-        </div>
-        <div class="svg">
-          <div class="circle">
-            <object type="image/svg+xml" data="/images/Vector-1.svg">
-              instagram logo
-            </object>
-          </div>
-          <div class="circle">
-            <object type="image/svg+xml" data="/images/Vector.svg">
-              linkedin logo
-            </object>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <%- include('components/footer') %>
   </body>
 </html>

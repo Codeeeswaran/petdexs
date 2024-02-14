@@ -1,0 +1,225 @@
+body {
+  background-color: whitesmoke;
+  font-family: "Trip Sans", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.parent {
+  width: 100%;
+  height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-insta {
+  background-color: red;
+  color: red;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.circle:hover {
+  background-color: red;
+}
+
+.svg {
+  display: flex;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+}
+
+.heading {
+  font-size: 200px;
+  font-weight: 500;
+}
+
+.description {
+  display: flex;
+  gap: 50px;
+}
+
+.text,
+.icon {
+  border-width: 4px;
+  border-color: black;
+  background-color: red;
+  padding: 20px 60px;
+  border-style: solid;
+  height: 160px;
+  width: 300px;
+}
+
+.circle1 {
+  display: flex;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 20px;
+  border-width: 4px;
+  border-style: solid;
+}
+
+.circle1:hover {
+  background-color: red;
+}
+
+.icon {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.text:hover {
+  color: black;
+  background-color: white;
+}
+
+.text p {
+  margin: -1px;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .link-container ul {
+  display: flex;
+  gap: 100px;
+}
+
+li {
+  list-style: none;
+  font-size: small;
+  font-weight: bolder;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 150px;
+  }
+  
+  footer .link-container ul {
+    display: flex;
+    gap: 100px;
+  }
+  
+
+footer a {
+    text-decoration: none;
+    color: white;
+  }
+  
+
+a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login {
+  padding: 5px 15px;
+  border: 3.5px solid black;
+  color: white;
+  background-color: black;
+  font-weight: 700;
+}
+
+.login:hover {
+  color: black;
+  background-color: red;
+  border: 3.5px solid red;
+}
+
+.signup {
+  padding: 5px 15px;
+  border: 3.5px solid black;
+  color: black;
+  font-weight: 800;
+  background-color: white;
+}
+
+.signup:hover {
+  color: white;
+  background-color: red;
+}
+
+@media only screen and (max-width: 330px) {
+  body {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px; /* Reduced the gap for better spacing in mobile view */
+    font-family: "Trip Sans", sans-serif;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between; /* Adjusted to better utilize space */
+    align-items: center;
+  }
+
+  header .link-container ul {
+    display: none; /* Hide navigation links by default */
+  }
+
+  header .button-container {
+    display: none; /* Hide buttons by default */
+  }
+
+  .logo {
+    margin-left: 20px; /* Adjusted margin for better positioning */
+  }
+
+  .login,
+  .signup {
+    display: block; /* Display buttons as block elements for better stacking on mobile */
+    width: 100%; /* Adjusted button width to fill available space */
+    margin-top: 10px; /* Added margin for better spacing */
+  }
+}

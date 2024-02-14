@@ -1,0 +1,176 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Trip Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+a:hover  {
+    text-decoration:none;
+    color: red;
+}
+ 
+
+
+
+.svg-insta {
+    background-color: red;
+    color: red;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background-color:white; 
+    border-radius: 50%;
+    padding:10px
+}
+
+.circle:hover {
+    
+    background-color:red; 
+    
+}
+
+.svg {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    align-items: center;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    border-color: black; 
+    background-color: red;
+    color: white;
+    border-style: solid;
+    border-width: 4px;
+    padding: 40px 90px;
+    align-items: center;
+    width: 850px;
+    height: 150px;
+}
+
+.description:hover{
+    color: black;
+    background-color: white;
+}
+.description div {
+    margin-bottom: -30px;
+}
+
+.hii {
+    margin-top: -10px;
+}
+
+
+h1 {
+    font-size: 200px;
+    margin-top:-30px;
+    margin-bottom:-8px;
+}
+.buttonscam {
+    text-decoration: none;
+}
+
+.hi,.hii{
+    font-size: 25px; 
+    margin: -40px;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  header .link-container ul {
+    display: flex;
+    gap: 100px;
+  }
+  
+  li {
+    list-style: none;
+    font-size: small;
+    font-weight: bolder;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: black;
+  }
+  footer a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: red;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+
+  .login {
+    padding: 5px 15px;
+    border: 3.5px solid black;
+    color: white;
+    background-color: black;
+    font-weight: 700;
+  }
+  
+  .login:hover {
+    color: black;
+    background-color: red;
+    border: 3.5px solid red;
+  }
+  
+  .signup {
+    padding: 5px 15px;
+    border: 3.5px solid black;
+    color: black;
+    font-weight: 800;
+    background-color: white;
+  }
+  
+  .signup:hover {
+    color: white;
+    background-color: red;
+  }
+
+  
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 150px;
+  }
+  
+  footer .link-container ul {
+    display: flex;
+    gap: 100px;
+  }
