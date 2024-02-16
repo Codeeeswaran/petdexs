@@ -20,33 +20,32 @@
     
 
     <div class="form-container">           
-        <form action="postpets" method="post" enctype="multipart/form-data">
+        <form action="/seller/<%= pet.sellerId %>/update/<%= pet.id %>" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="pet_name">PET'S NAME</label>
-                <input type="text" id="pet_name" name="name" required>
+                <input type="text" value="<%= pet.name %>" id="pet_name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="breed">BREED</label>
-                <input type="text" id="breed" name="breed" required>
+                <input type="text"  value="<%= pet.breed %>" id="breed" name="breed" required>
             </div>
             <div class="form-group">
                 <label class="coat-color-label" for="coat_color">COAT COLOR</label>
-                <input type="text" id="coat_color" name="color" class="coat-color-input">
+                <input type="text" id="coat_color" value="<%= pet.color %>" name="color" class="coat-color-input">
                 <div class="a"><label for="age">AGE</label>
-                <input type="number" id="age" name="age" min="0" class="age-input"></div>
+                <input type="number" id="age"  value="<%= pet.age %>" name="age" min="0" class="age-input"></div>
             </div>
             <div class="form-group">
                 <label for="description">DESCRIPTION</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
+                <textarea id="description" name="description" rows="4" required><%= pet.description %></textarea>
             </div>
             <div class="form-group">
                 <label for="pet_image">UPLOAD PET IMAGE</label>
                 <input type="file" id="pet_image" name="file">
             </div>
-            <button type="submit">SUBMIT</button>
+            <button type="submit">UPDATE</button>
         </form>
 
-        <a href="yourpets"><div class="yourpet">YOUR PET</div></a>
     </div>
 
 

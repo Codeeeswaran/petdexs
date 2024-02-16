@@ -15,7 +15,7 @@
     <div class="signup-heading">SIGN UP</div>
 
     <div class="form-container">
-      <label for="username" class="form-label">Username</label>
+      <label for="username" class="form-label">Name</label>
       <input type="text" name="name" id="username" class="signup-input" >
     </div>
 
@@ -30,6 +30,26 @@
     <div class="form-container">
       <label for="password" class="form-label">Password</label>
       <input type="password" name="password" id="password" class="signup-input" >
+    </div>
+    <div class="form-container" >
+      <label for="username" class="form-label">Place</label>
+      <input list="districts" name="place" class="signup-input">
+      <datalist id="districts">
+          <option value="Thiruvananthapuram">
+          <option value="Kollam">
+          <option value="Pathanamthitta">
+          <option value="Alappuzha">
+          <option value="Kottayam">
+          <option value="Idukki">
+          <option value="Ernakulam">
+          <option value="Thrissur">
+          <option value="Palakkad">
+          <option value="Malappuram">
+          <option value="Kozhikode">
+          <option value="Wayanad">
+          <option value="Kannur">
+          <option value="Kasaragod">
+      </datalist>
     </div>
     <button class="signup-button">Sign Up</button>
     <div class="already" >Already have an account? <a href="/buyer/login">log in here</a></div>

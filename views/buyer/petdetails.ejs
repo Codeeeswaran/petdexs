@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="/stylesheets/buyer/nav.css">
+ <link rel="stylesheet" href="/stylesheets/buyer/petdetails.css">
+ <script src="script.js"></script>
+<body>
+   <%- include('components/nav') %>
+
+   <div class="parent">
+    <div class="container">
+        <div class="pet-img"><img src="<%= pet.img %>" alt="Bella"></div>
+        <div class="div-col"><div class="pet-name-description">
+          <div class="pet-name"><%= pet.name %></div>
+          <div class="pet-description"><%= pet.description %></div>
+        </div>
+        <div class="calsav" >
+            <a href="tel:<%= owner.contact %>" class="call">
+                <object type="image/svg+xml" data="/images/call black.svg">
+                    call logo
+                </object>
+            </a>
+            <a href="/buyer/<%= id %>/saved/<%= pet.id %>" class="save">
+                <object type="image/svg+xml" data="/images/save black.svg">
+                    save logo
+                </object>
+            </a>
+        </div></div>
+        
+    <div class="div-row">
+          <div class="pet-details">
+          <div class="pet-breed"><%= pet.breed %></div>
+          <div class="pet-coat-color"><%= pet.color %></div>
+          <div class="pet-age"><%= pet.age %> Years</div>
+        </div>
+        <div class="owner-details">
+            <div class="owner-name"><%= owner.name %></div>
+            <div class="contact-no"><%= owner.contact %></div>
+          </div>
+      </div>
+      
+    </div>
+</div>
+
+    <%- include('../components/footer') %>
+</body>
+</html>

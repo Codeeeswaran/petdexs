@@ -4,13 +4,22 @@ body {
     font-family: 'Trip Sans', sans-serif;
     margin: 0px;
     padding: 0px;
-    
 }
 
-a{
-  text-decoration: none;
-  color: black;
+
+
+a:hover  {
+    text-decoration:none;
+    color: red;
 }
+ 
+.button-container {
+    display: flex;
+    gap:5px;
+}
+
+
+
 
 .svg-insta {
     background-color: red;
@@ -39,6 +48,16 @@ a{
 }
 
 
+
+
+
+.parent{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 .container {
     font-weight: bolder;
@@ -90,11 +109,9 @@ a{
     align-self: center;
   }
 
-  /* .pet-name-description {
-    margin-left: -645px;
-  } */
+  
 
-  .updel {
+  .calsav {
     display: flex;
     gap: 10px;
   }
@@ -102,33 +119,50 @@ a{
 .div-col {
   display: flex; 
   align-items: center; 
-   gap: 512px;
+   gap: 532px;
   justify-content: center;
 }
 
-.update {
+.call {
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    border: 5px solid black;
+    height: 25px;
+    width: 25px;
+    padding:10px;
+    padding:10px;
+    border-radius: 50%;
+}
+
+.call:hover {
+  background-color: red;
+  
+}
+
+.save {
+    display: flex;
+    justify-content: center;
   border: 5px solid black;
   height: 25px;
-  width: 60px;
-  padding:5px 5px;
+  width: 25px;
+  padding:10px;
+  border-radius: 50%;
 }
 
-.update:hover {
+.save:hover {
   background-color: red;
+ 
 }
 
-.delete {
-  border: 5px solid black;
-  height: 25px;
-  width: auto;
-  padding:5px 5px;
-}
-
-.delete:hover {
-  background-color: red;
-}
-
-   .delete object {
+   .save object {
   width: 20px; /* specify the desired width */
   height: auto; /* set height to auto to maintain aspect ratio */
 }
+
+.call object {
+    width: 20px; /* specify the desired width */
+    height: auto; /* set height to auto to maintain aspect ratio */
+  }
+
+ 

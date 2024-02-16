@@ -10,6 +10,7 @@
 <body>
   
 <%- include('../components/nav') %>
+<div style="width: 100%;display: flex;justify-content: center; margin-bottom: 10px;">
     <div class="container">
         <div class="pet-img"><img src="<%=pet?.img  %>" alt="<%=pet?.name  %>"></div>
         <div class="div-col"> 
@@ -18,10 +19,10 @@
           <div class="pet-description"><%=pet?.description  %></div>
         </div>
         <div class="updel">
-            <div class="update">UPDATE</div>
-            <div class="delete"><object type="image/svg+xml" data="/images/delete black.svg">
+            <a href="/seller/<%= pet.sellerId %>/update/<%= pet.id %>" class="update">UPDATE</a>
+            <a href="/seller/<%= pet.sellerId %>/delete/<%= pet.id %>" class="delete"><object type="image/svg+xml" data="/images/deleteblack.svg">
                 linkedin logo
-            </object></div>
+            </object></a>
         </div></div>
        
     <div class="div-row">
@@ -37,7 +38,7 @@
       </div>
       
     </div>
-
+  </div>
     <%- include('../components/footer') %>
 </body>
 </html>

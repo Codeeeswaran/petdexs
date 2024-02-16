@@ -19,7 +19,15 @@ const buyerModel=sequelizeConfig.define('buyerlogin',{
     password:{
         type:DataTypes.STRING,
         allowNull:false,
-    }
+    },
+    saved:{
+        type:DataTypes.ARRAY(DataTypes.STRING),
+        allowNull:true
+    },
+    place:{
+        type:DataTypes.STRING,
+        allowNull:false,
+    },
 });
 
 module.exports=buyerModel;

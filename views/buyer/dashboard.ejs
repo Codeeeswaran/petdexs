@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="/stylesheets/buyer/nav.css">
+ <link rel="stylesheet" href="/stylesheets/buyer/dashboard.css">
+ <script src="script.js"></script>
+<body>
+    <%- include('components/nav') %>
+
+    <div class="container">
+        <div class="head-row">
+            <div class="title"><h1><div class="hi">YOUR IDEAL PET MAY JUST</div> <div class="hii"> BE A CLICK AWAY</div> </h1></div>
+            <form action="" method="get"  class="search-container">
+                <input type="text" class="search-bar" name="query" placeholder="Search...">
+            </form> 
+            </div>
+    </div>
+        <div class="parent">
+        <div class="pet-container"> 
+            <div class="pet-row">
+
+                <% if (pets.length == 0) { %>
+                 <h1>No Pets Found</h1>
+                <% }else{ %>
+
+                <% for( let i = 0; i < pets.length; i++ ) { %>
+                    <a href="/buyer/<%= id %>/petdetails/<%= pets[i].dataValues.id %>"><div class="pet-details">
+                        <div class="pet-image"><img src="<%= pets[i].dataValues.img %>" alt="<%= pets[i].dataValues.name %>"></div>
+                        <div class="pet-name"><%= pets[i].dataValues.name %></div>
+                        <div class="pet-breed"><%= pets[i].dataValues.breed %></div>
+                        <div class="pet-coat-color"><%= pets[i].dataValues.color %></div>
+                      </div></a>
+                <% } %>
+               <% } %>
+      
+    
+      
+     
+    
+      <!-- Add more pet-details divs for additional pets -->
+            </div>
+    </div>
+</div>
+
+   <%- include('../components/footer') %>
+</body>
+</html>
