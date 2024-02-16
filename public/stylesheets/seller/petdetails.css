@@ -1,0 +1,130 @@
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Trip Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+
+.svg-insta {
+    background-color: red;
+    color: red;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background-color:white; 
+    border-radius: 50%;
+    padding:10px
+}
+
+.circle:hover {
+    
+    background-color:red; 
+    
+}
+
+.svg {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.container {
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    max-width:1000px;
+    min-width:1000px;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    padding: 20px;
+    align-self:center;
+  }
+  .pet-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    width: 200px;
+    text-align: center;
+  }
+  .container img {
+    align-self: center;
+    min-width: 900px;
+    max-width: 900px;
+    max-height: 500px;
+    margin-bottom: 10px;
+    border: 5px solid black;
+  }
+  .div-row {
+    display: flex;
+  
+    align-items: center;
+    gap: 630px;
+    margin-left: -55px;
+  }
+
+  .pet-name {
+    font-size: xx-large;
+    font-weight: bolder;
+  }
+
+  .pet-img {
+    align-self: center;
+  }
+
+  /* .pet-name-description {
+    margin-left: -645px;
+  } */
+
+  .updel {
+    display: flex;
+    gap: 10px;
+  }
+
+.div-col {
+  display: flex; 
+  align-items: center; 
+   gap: 512px;
+  justify-content: center;
+}
+
+.update {
+  border: 5px solid black;
+  height: 25px;
+  width: 60px;
+  padding:5px 5px;
+}
+
+.update:hover {
+  background-color: red;
+}
+
+.delete {
+  border: 5px solid black;
+  height: 25px;
+  width: auto;
+  padding:5px 5px;
+}
+
+.delete:hover {
+  background-color: red;
+}
+
+   .delete object {
+  width: 20px; /* specify the desired width */
+  height: auto; /* set height to auto to maintain aspect ratio */
+}

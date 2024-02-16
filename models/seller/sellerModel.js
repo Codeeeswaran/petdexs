@@ -1,7 +1,8 @@
 const sequelizeConfig=require('../../config/sequelize.config');
 const {DataTypes}=require('sequelize');
+const petModel = require('./petModel');
 
-const sellerModel=sequelizeConfig.define('buyerlogin',{
+const sellerModel=sequelizeConfig.define('sellerlogin',{
     id:{
         type:DataTypes.STRING,
         primaryKey:true,
@@ -19,7 +20,16 @@ const sellerModel=sequelizeConfig.define('buyerlogin',{
     password:{
         type:DataTypes.STRING,
         allowNull:false,
-    }
+    },
+    contact:{
+        type:DataTypes.STRING,
+        allowNull:false,
+    },
+    place:{
+        type:DataTypes.STRING,
+        allowNull:false,
+    },
 });
+
 
 module.exports=sellerModel;

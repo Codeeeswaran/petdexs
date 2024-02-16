@@ -1,0 +1,170 @@
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Trip Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+a:hover  {
+    text-decoration:none;
+    color: red;
+}
+ 
+
+
+.svg-insta {
+    background-color: red;
+    color: red;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background-color:white; 
+    border-radius: 50%;
+    padding:10px
+}
+
+.circle:hover {
+    
+    background-color:red; 
+    
+}
+
+.svg {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-container input[type="text"],
+.form-container textarea {
+    width: calc(50% - 5px); /* Adjusted width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+.form-container input[type="file"] {
+    width: auto;
+}
+.form-container label {
+    font-weight: bold;
+    font-size: larger;
+    display:flex;
+    align-self: center;
+}
+.form-container .form-group {
+    margin-bottom: 10px;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-container .age-input {
+    width: 150px; /* Adjusted width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+.form-container .coat-color-input {
+    max-width: 180px;/* Adjusted width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 5px solid black;
+    box-sizing: border-box;
+    margin-right: 10px; /* Adjusted margin */
+}
+
+.form-container .coat-color-label {
+    
+    margin-right: 300px; /* Adjusted margin */
+}
+
+.a{
+    display: flex;
+    gap: 15px;
+}
+
+
+
+
+.form-container button {
+    background-color:white;
+    color: black;
+    padding: 15px 40px;
+    border: 5px solid black;
+    cursor: pointer;
+    margin-left: 45%;
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+.form-container button:hover {
+    background-color:red;
+}
+
+.yourpet {
+    padding: 50px;
+    max-width: 350px;
+    max-height:80px;
+    border: 5px solid black;
+    padding-left: 330px;
+    padding-right: 200px;
+    margin-top: 50px;
+    font-weight: bolder;
+    font-size: xx-large;
+    color:black ;
+}
+
+
+.yourpet:hover {
+    background-color: rgb(193, 132, 249);
+}
+
+.yourpet a:hover {
+  color: black;
+}
+
+.heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.descri{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head {
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.head-descri{
+    
+    margin-left: 120px;
+}
+ a {
+    text-decoration: none;
+ }

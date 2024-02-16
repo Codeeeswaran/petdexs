@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+ <link rel="stylesheet" href="/stylesheets/nav.css">
+ <link rel="stylesheet" href="/stylesheets/seller/petdetails.css">
+ <script src="script.js"></script>
+<body>
+  
+<%- include('../components/nav') %>
+    <div class="container">
+        <div class="pet-img"><img src="<%=pet?.img  %>" alt="<%=pet?.name  %>"></div>
+        <div class="div-col"> 
+            <div class="pet-name-description">
+          <div class="pet-name"><%=pet?.name  %></div>
+          <div class="pet-description"><%=pet?.description  %></div>
+        </div>
+        <div class="updel">
+            <div class="update">UPDATE</div>
+            <div class="delete"><object type="image/svg+xml" data="/images/delete black.svg">
+                linkedin logo
+            </object></div>
+        </div></div>
+       
+    <div class="div-row">
+          <div class="pet-details">
+          <div class="pet-breed"><%=pet?.breed  %></div>
+          <div class="pet-coat-color"><%=pet?.color  %></div>
+          <div class="pet-age"><%=pet?.age %> Years</div>
+        </div>
+        <div class="owner-details">
+            <div class="owner-name"><%= owner.name %></div>
+            <div class="contact-no"><%= owner.contact %></div>
+          </div>
+      </div>
+      
+    </div>
+
+    <%- include('../components/footer') %>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="/stylesheets/nav.css">
+ <link rel="stylesheet" href="/stylesheets/seller/postpets.css">
+ <script src="script.js"></script>
+<body>
+   
+    <%- include('../components/nav') %>
+
+    <div class="heading">
+        <div class="head">POST YOUR PET</div>
+        <div class="descri"> <div class="head-descrip">Be honest and transparent about the pets personality,health,
+            <div class="head-descri">and any special needs</div></div></div>
+       
+    </div>
+    
+
+    <div class="form-container">           
+        <form action="postpets" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="pet_name">PET'S NAME</label>
+                <input type="text" id="pet_name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="breed">BREED</label>
+                <input type="text" id="breed" name="breed" required>
+            </div>
+            <div class="form-group">
+                <label class="coat-color-label" for="coat_color">COAT COLOR</label>
+                <input type="text" id="coat_color" name="color" class="coat-color-input">
+                <div class="a"><label for="age">AGE</label>
+                <input type="number" id="age" name="age" min="0" class="age-input"></div>
+            </div>
+            <div class="form-group">
+                <label for="description">DESCRIPTION</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="pet_image">UPLOAD PET IMAGE</label>
+                <input type="file" id="pet_image" name="file">
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+
+        <a href="/yourpets/index.html"><div class="yourpet">YOUR PET</div></a>
+    </div>
+
+
+
+    <%- include('../components/footer') %>
+</body>
+</html>
