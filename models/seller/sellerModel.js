@@ -29,6 +29,10 @@ const sellerModel=sequelizeConfig.define('sellerlogin',{
         type:DataTypes.STRING,
         allowNull:false,
     },
+    verify:{
+        type:DataTypes.BOOLEAN,
+        allowNull:false,
+    }
 });
 
 

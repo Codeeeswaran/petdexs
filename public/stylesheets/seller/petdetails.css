@@ -115,6 +115,7 @@ a{
 
 .update:hover {
   background-color: red;
+  color: black;
 }
 
 .delete {

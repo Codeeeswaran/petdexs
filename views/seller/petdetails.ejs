@@ -9,10 +9,10 @@
  <script src="script.js"></script>
 <body>
   
-<%- include('../components/nav') %>
+<%- include('components/nav') %>
 <div style="width: 100%;display: flex;justify-content: center; margin-bottom: 10px;">
     <div class="container">
-        <div class="pet-img"><img src="<%=pet?.img  %>" alt="<%=pet?.name  %>"></div>
+        <div class="pet-img"><img src="<%=pet?.img  %>"  alt="<%=pet?.name  %>"></div>
         <div class="div-col"> 
             <div class="pet-name-description">
           <div class="pet-name"><%=pet?.name  %></div>

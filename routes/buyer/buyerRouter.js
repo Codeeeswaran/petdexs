@@ -6,7 +6,7 @@ const generateToken = require("../../utils/auth");
 const verifyToken = require("../../utils/verifyToken");
 const petModel = require("../../models/seller/petModel");
 const sellerModel = require("../../models/seller/sellerModel");
-const { where,Op } = require("sequelize");
+const { where, Op, Sequelize } = require("sequelize");
 
 router.get("/signup", (req, res) => {
   if (req.cookies.buyer) {
@@ -18,7 +18,7 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  const { name, email, password,place } = req.body;
+  const { name, email, password, place } = req.body;
   const findEmail = await buyerModel.findOne({
     where: {
       email: email,
@@ -33,7 +33,7 @@ router.post("/signup", async (req, res) => {
         name: name,
         email: email,
         password: password,
-        place:place
+        place: place,
       })
       .then((data) => {
         const token = generateToken(data.dataValues.id);
@@ -46,8 +46,6 @@ router.post("/signup", async (req, res) => {
         res.redirect(`/buyer/${data.dataValues.id}/dashboard`);
       });
   }
-
-  // const findEmail=await
 });
 
 router.get("/login", async (req, res) => {
@@ -86,33 +84,35 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/:id/dashboard", async (req, res) => {
-  const {query}=req.query;
+  const { query } = req.query;
   const { id } = req.params;
 
   if (req.cookies.buyer) {
-
-  if(query){
-    const pets = await petModel.findAll({
-      where:{
-        breed:{
-          [Op.iLike]: `%${query}%`
-        }
-      }
-    }).then((data)=>{
-      res.render("buyer/dashboard", { pets: data, id: id });
-    }).catch((err)=>{
-      res.json({err:err.message})
-    })
-  }else{
-    const pets = await petModel.findAll({}).then((data)=>{
-      res.render("buyer/dashboard", { pets: data, id: id });
-    }).catch((err)=>{
-      res.json({err:err.message})
-    })
-  }
-  
-  
-    
+    if (query) {
+      const pets = await petModel
+        .findAll({
+          where: {
+            breed: {
+              [Op.iLike]: `%${query}%`,
+            },
+          },
+        })
+        .then((data) => {
+          res.render("buyer/dashboard", { pets: data, id: id });
+        })
+        .catch((err) => {
+          res.json({ err: err.message });
+        });
+    } else {
+      const pets = await petModel
+        .findAll({})
+        .then((data) => {
+          res.render("buyer/dashboard", { pets: data, id: id });
+        })
+        .catch((err) => {
+          res.json({ err: err.message });
+        });
+    }
   } else {
     res.redirect("/buyer/login");
   }
@@ -196,6 +196,66 @@ router.get("/:id/saved/:petid", async (req, res) => {
     } else {
       res.redirect(`/buyer/${id}/dashboard`);
     }
+  } else {
+    res.redirect("/buyer/login");
+  }
+});
+
+router.get("/:id/remove/:post", async (req, res) => {
+  const { id, post } = req.params;
+  if (req.cookies.buyer) {
+    const findId = await buyerModel.findByPk(id);
+
+    if (!findId) {
+      res.clearCookie("buyer");
+      res.redirect(`/buyer/login`);
+    } else {
+      const findId = await buyerModel.findByPk(id);
+
+      if (!findId) {
+        res.clearCookie("buyer");
+        res.redirect("/buyer/login");
+      } else {
+        const deletePost = await buyerModel
+          .update(
+            {
+              saved: Sequelize.fn("array_remove", Sequelize.col("saved"), post),
+            },
+            {
+              where: {},
+              returning: true,
+            }
+          )
+          .then(() => {
+            res.redirect(`/buyer/${id}/profile`);
+          })
+          .catch((err) => {
+            res.json({ err: err.message });
+          });
+      }
+    }
+  } else {
+    res.redirect("/buyer/login");
+  }
+});
+
+router.get("/:id/profile", async (req, res) => {
+  console.log("Working");
+  const { id } = req.params;
+  if (req.cookies.buyer) {
+    const profile = await buyerModel.findByPk(id);
+    console.log(profile);
+    const savedPets = await petModel.findAll({
+      where: {
+        id: profile?.dataValues?.saved,
+      },
+    });
+    console.log(savedPets);
+    res.render("buyer/profile", {
+      profile: profile.dataValues,
+      saved: savedPets,
+      id: id,
+    });
   } else {
     res.redirect("/buyer/login");
   }

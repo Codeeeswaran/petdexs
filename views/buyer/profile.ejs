@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+ <link rel="stylesheet" href="/stylesheets/buyer/profile.css">
+ <!-- <script src="script.js"></script> -->
+<body>
+    <%- include('components/nav') %>
+
+    <div style="width: 100%;display: flex;justify-content: center;">
+    <div class="container">
+         <div class="pro">
+            <div class="username"><%= profile.name %></div>
+            <div class="emailname"><%= profile.email %></div>
+         </div>
+        <div class="pet-container">
+             <div class="title"><h1><div class="hi">SAVED PETS </div> </h1></div>
+            <div class="pet-row">
+
+                <% if (saved.length == 0 || saved == null) { %>
+                 <h1>No Saved Post</h1>
+                <% }else{ %>
+
+                <% for( let i = 0; i < saved.length; i++ ) { %>
+                
+                
+                <a href="/buyer/<%= id %>/petdetails/<%= saved[i]?.dataValues?.id %>"><div class="pet-details">
+        <div class="pet-image"><img src="<%= saved[i]?.dataValues?.img %>" alt="Bella"></div>
+        <div class="pet-name"><%= saved[i]?.dataValues?.name %></div>
+        <div class="pet-breed"><%= saved[i]?.dataValues?.breed %></div>
+        <div class="pet-coat-color"><%= saved[i]?.dataValues?.color %></div>
+      </div></a>
+      
+      <% } %>
+      <% } %>
+      
+      </div></div></a>
+      
+     
+    
+      <!-- Add more pet-details divs for additional pets -->
+      
+    </div>
+</div>
+
+    <%- include('../components/footer') %>
+</body>
+</html>

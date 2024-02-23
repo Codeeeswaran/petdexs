@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+ <link rel="stylesheet" href="/stylesheets/admin/login.css">
+ <!-- <script src="login.js"></script> -->
+<body>
+    <header>
+        <div class="logo">
+            <object type="image/svg+xml" data="/images/bl.svg">
+                company logo
+            </object>
+        </div>
+        <div class="link-container">
+            <ul>
+                <li><a href="/home/index.html">home</a></li>
+                <li><a href="/about/index.html">about</a></li>
+                <li><a href="/contact/index.html">contact</a></li>
+            </ul>
+        </div>
+        <div class="button-container">
+            <!-- <button class="login">log in</button>
+            <button class="signup">sign up</button>-->
+        </div> 
+    </header>
+
+    <div class="login-container">
+        <div class="login-heading">LOG IN</div>
+    
+        <div class="form-container">
+          <label for="username" class="form-label">Email</label>
+          <% if (!emailExist) { %>
+            <input type="email" name="email" placeholder="Email Doesn't Exist" id="email" class="login-input" >
+          <% }else{ %>
+          <input type="email" name="email"  id="email" class="login-input"  >
+          <% } %>
+        </div>
+    
+        <div class="form-container">
+          <label for="password" class="form-label">Password</label>
+          <% if (passwordError) { %>
+            <input type="password" style="margin-left: -30px;" name="password" placeholder="Wrong Password" id="password" class="login-input">
+          <% }else{ %>
+          <input type="password" style="margin-left: -30px;" name="password" id="password" class="login-input">
+          <% } %>
+        </div>
+    
+        <button class="login-button" onclick="validateLogin()">Log In</button>
+         <div class="already" >Don't have an account?<a href="/admin/signup">sign in here</a></div>
+      </div>
+        
+
+
+ <footer class="footer">
+        <div class="logo">
+            <object type="image/svg+xml" data="/images/wh.svg">
+                company logo
+            </object>
+        </div>
+        <div class="link-container">
+            <ul>
+                <li><a href="/home/index.html">home</a></li>
+                <li><a href="/about/index.html">about</a></li>
+                <li><a href="/contact/index.html">contact</a></li>
+            </ul>
+        </div>
+        <div class="svg">
+            <div class="circle">
+                 <object  type="image/svg+xml" data="/images/Vector-1.svg">
+                instagram logo
+            </object>
+                </div>
+
+            <div class="circle"> 
+                <object type="image/svg+xml" data="/images/Vector.svg">
+                linkedin logo
+            </object></div>
+        </div>
+    </footer>
+</body>
+</html>

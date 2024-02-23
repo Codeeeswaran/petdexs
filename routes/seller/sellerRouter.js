@@ -13,7 +13,7 @@ const upload = multer({ storage: storage });
 router.get("/signup", (req, res) => {
   if (req.cookies.seller) {
     const id = verifyToken(req.cookies.seller);
-    res.redirect(`seller/${id}/postpets`);
+    res.redirect(`/seller/${id}/postpets`);
   } else {
     res.render("seller/signup", { emailExist: false });
   }
@@ -37,6 +37,7 @@ router.post("/signup", async (req, res) => {
         password: password,
         place: place,
         contact: contact,
+        verify:false
       })
       .then((data) => {
         const token = generateToken(data.dataValues.id);
@@ -56,7 +57,7 @@ router.post("/signup", async (req, res) => {
 router.get("/login", (req, res) => {
   if (req.cookies.seller) {
     const id = verifyToken(req.cookies.seller);
-    res.redirect(`${id}/postpets`);
+    res.redirect(`/seller/${id}/postpets`);
   } else {
     res.render("seller/login", { emailExist: true, passwordError: false });
   }
@@ -79,7 +80,7 @@ router.post("/login", async (req, res) => {
         httpOnly: true,
       });
 
-      res.redirect(`seller/${findEmail.dataValues.id}/postpets`);
+      res.redirect(`/seller/${findEmail.dataValues.id}/postpets`);
     } else {
       res.render("seller/login", { emailExist: true, passwordError: true });
     }

@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var buyerRouter=require('./routes/buyer/buyerRouter');
 var sellerRouter=require('./routes/seller/sellerRouter');
+var adminRouter=require('./routes/admin/adminRouter');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/buyer', buyerRouter);
 app.use('/seller',sellerRouter);
+app.use('/admin',adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
