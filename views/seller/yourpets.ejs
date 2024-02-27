@@ -14,6 +14,7 @@
         
         <div class="pet-container">
              <div class="title"><h1><div class="hi">YOUR PETS </div> </h1></div>
+             <div class="logout">LOG OUT</div>
             <div class="pet-row">
               <% for( let i = 0; i < pets.length; i++ ) { %>
                 <a href="/seller/<%=pets[i].dataValues.sellerId  %>/petdetails/<%=pets[i].dataValues.id %>"><div class="pet-details">
