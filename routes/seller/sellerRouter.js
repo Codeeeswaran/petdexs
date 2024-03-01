@@ -291,4 +291,10 @@ router.post("/:id/update/:petid", upload.single("file"), async (req, res) => {
   }
 });
 
+
+router.get('/logout',(req,res)=>{
+  res.clearCookie('seller');
+  res.redirect('/seller/login');
+})
+
 module.exports = router;

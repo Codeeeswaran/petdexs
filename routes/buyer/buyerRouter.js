@@ -261,4 +261,9 @@ router.get("/:id/profile", async (req, res) => {
   }
 });
 
+router.get('/logout',(req,res)=>{
+  res.clearCookie('buyer');
+  res.redirect('/buyer/login');
+})
+
 module.exports = router;
