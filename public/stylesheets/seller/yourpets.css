@@ -110,7 +110,7 @@ a {
 .petwrapper {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 40px;
   align-items: center;
 }
 
