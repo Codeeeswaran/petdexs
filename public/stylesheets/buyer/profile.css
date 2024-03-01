@@ -207,3 +207,6 @@ a {
 .nothing {
   width: 300px;
 }
+.del{
+  position: absolute;
+}
