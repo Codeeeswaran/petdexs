@@ -165,4 +165,24 @@ a:hover  {
     height: auto; /* set height to auto to maintain aspect ratio */
   }
 
+  .delete {
+    display: flex;
+    justify-content: center;
+  border: 5px solid black;
+  height: 25px;
+  width: 25px;
+  padding:10px;
+  border-radius: 50%;
+}
+
+.delete:hover {
+  background-color: red;
+ 
+}
+
+   .delete object {
+  width: 20px; /* specify the desired width */
+  height: auto; /* set height to auto to maintain aspect ratio */
+}
+
  
