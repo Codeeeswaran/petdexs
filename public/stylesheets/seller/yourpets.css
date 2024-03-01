@@ -89,3 +89,31 @@ a {
   font-weight: bolder;
   color: black;
 }
+
+.logout {
+  width: 200px;
+  text-align: center;
+  padding: 10px 25px;
+  font-weight: 800;
+  font-size: xx-large;
+  background-color: white;
+  border: solid 5px black;
+  background-color:white;
+  color: black;
+}
+
+.logout:hover {
+  background-color:red;
+  color: white;
+}
+
+.petwrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+
+.nothing {
+  width: 300px;
+}
