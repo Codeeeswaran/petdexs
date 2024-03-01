@@ -136,6 +136,7 @@ router.get("/:id/petdetails/:petid", async (req, res) => {
               pet: data.dataValues,
               id: id,
               owner: data2.dataValues,
+              deletebtn:false
             });
           })
           .catch((err) => {
@@ -260,6 +261,40 @@ router.get("/:id/profile", async (req, res) => {
     res.redirect("/buyer/login");
   }
 });
+
+router.get("/:id/profile/petdetails/:petid", async (req, res) => {
+  const { id, petid } = req.params;
+
+  if (req.cookies.buyer) {
+    const pet = await petModel
+      .findByPk(petid)
+      .then(async (data) => {
+        const owner = await sellerModel
+          .findOne({
+            where: {
+              id: data?.dataValues?.sellerId,
+            },
+          })
+          .then((data2) => {
+            res.render("buyer/petdetails", {
+              pet: data.dataValues,
+              id: id,
+              owner: data2.dataValues,
+              deletebtn:true
+            });
+          })
+          .catch((err) => {
+            res.json({ err: err.message });
+          });
+      })
+      .catch((err) => {
+        res.json({ err: err.message });
+      });
+  } else {
+    res.redirect("/buyer/login");
+  }
+});
+
 
 router.get('/logout',(req,res)=>{
   res.clearCookie('buyer');

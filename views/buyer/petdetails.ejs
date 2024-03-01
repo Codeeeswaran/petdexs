@@ -28,12 +28,14 @@
                     save logo
                 </object>
             </a>
-
-            <a href="" class="delete">
-                <object type="image/svg+xml" data="/images/deleteblack.svg">
-                    save logo
-                </object>
-            </a>
+         <% if (deletebtn) { %>
+            <a href="/buyer/<%= id %>/remove/<%= pet.id %>" class="delete">
+               <object type="image/svg+xml" data="/images/deleteblack.svg">
+                Delete logo
+              </object>
+           </a>
+       <% } %>
+           
         </div></div>
         
     <div class="div-row">
