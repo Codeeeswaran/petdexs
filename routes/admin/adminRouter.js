@@ -212,18 +212,18 @@ router.get("/verify/:id", async (req, res) => {
 });
 
 
-router.get('/delete',async(req,res)=>{
-  res.clearCookie("admin");
-  const deleteAdmin=await adminlogin.drop().then(async () => {
-    console.log("Drop all the Table");
-    (await sequelizeConfig.sync()).authenticate().then(() => {
-      console.log("All Table created Successfully");
-      res.redirect("/");
-    });
-  }).catch((err)=>{
-    res.json({err:err.message})
-  })
-})
+// router.get('/delete',async(req,res)=>{
+//   res.clearCookie("admin");
+//   const deleteAdmin=await adminlogin.drop().then(async () => {
+//     console.log("Drop all the Table");
+//     (await sequelizeConfig.sync()).authenticate().then(() => {
+//       console.log("All Table created Successfully");
+//       res.redirect("/");
+//     });
+//   }).catch((err)=>{
+//     res.json({err:err.message})
+//   })
+// })
 
 router.get('/logout',(req,res)=>{
     res.clearCookie('admin');
