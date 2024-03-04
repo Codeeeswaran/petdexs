@@ -90,12 +90,10 @@ footer .link-container ul {
   margin-left: 120px;
 }
 
-/* .start-btn {
+.start-btn {
   position: absolute;
-  top: 500px;
-  margin-top: 100px;
-  
-} */
+  top: 560px; 
+}
 
 .start {
   height: 50px;
