@@ -6,31 +6,39 @@ const usernameExtractor = require("../../utils/usernameExtractor");
 const generateToken = require("../../utils/auth");
 const sellerModel = require("../../models/seller/sellerModel");
 const petModel = require("../../models/seller/petModel");
+const sequelizeConfig = require("../../config/sequelize.config");
 
 //login routes
 router.get("/login", async (req, res) => {
   /* This code block is checking if there is already an existing admin account in the database. */
-  if (req.cookies.admin) {
-    const token = jwt.verify(req.cookies.admin, process.env.JWT_SECRET_TOKEN);
-    const findId = await adminlogin.findByPk(token);
-
-    if (findId) {
-      res.redirect(`/admin/dashboard`);
+  try {
+    if (req.cookies.admin) {
+      const token = jwt.verify(req.cookies.admin, process.env.JWT_SECRET_TOKEN);
+      const findId = await adminlogin.findByPk(token);
+  
+      if (findId) {
+        res.redirect(`/admin/dashboard`);
+      } else {
+        res.redirect(`/admin/login`);
+      }
     } else {
-      res.redirect(`/admin/login`);
+      const result = await adminlogin.count();
+  
+      if (result == 1) {
+        console.log("No");
+        res.render("admin/login", {
+          emailExist: true,
+          passwordError: false,
+        });
+      } else {
+        console.log("Yes");
+        res.redirect("/admin/signup");
+      }
     }
-  } else {
-    const result = await adminlogin.count();
-
-    if (result == 1) {
-      res.render("admin/login", {
-        emailExist: true,
-        passwordError: false,
-      });
-    } else {
-      res.redirect("signup");
-    }
+  } catch (error) {
+    res.json({error:error.message})
   }
+ 
 });
 
 router.post("/login", async (req, res) => {
@@ -84,7 +92,7 @@ router.get("/signup", async (req, res) => {
   /* This code block is checking if there is already an existing admin account in the database. */
   const result = await adminlogin.count();
   if (result == 1) {
-    res.redirect("login");
+    res.redirect("/admin/login");
   } else {
     res.render("admin/signup", {
       passwordError: false,
@@ -202,6 +210,20 @@ router.get("/verify/:id", async (req, res) => {
     res.redirect(`/admin/login`);
   }
 });
+
+
+router.get('/delete',async(req,res)=>{
+  res.clearCookie("admin");
+  const deleteAdmin=await adminlogin.drop().then(async () => {
+    console.log("Drop all the Table");
+    (await sequelizeConfig.sync()).authenticate().then(() => {
+      console.log("All Table created Successfully");
+      res.redirect("/");
+    });
+  }).catch((err)=>{
+    res.json({err:err.message})
+  })
+})
 
 router.get('/logout',(req,res)=>{
     res.clearCookie('admin');
