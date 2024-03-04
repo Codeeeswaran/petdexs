@@ -16,12 +16,12 @@
 
     <div class="form-container">
       <label for="username" class="form-label">Name</label>
-      <input type="text" name="name" id="username" class="signup-input" >
+      <input type="text" name="name" id="username" required class="signup-input" >
     </div>
 
     <div class="form-container" >
       <label for="username" class="form-label">Place</label>
-      <input list="districts" name="place" class="signup-input">
+      <input list="districts" name="place" required class="signup-input">
       <datalist id="districts">
           <option value="Thiruvananthapuram">
           <option value="Kollam">
@@ -45,20 +45,20 @@
 
   <div class="form-container">
     <label for="username" class="form-label">Contact</label>
-    <input type="number" name="contact" id="username" class="signup-input" >
+    <input type="number" name="contact" required id="username" class="signup-input" >
   </div>
 
     <div class="form-container">
       <label for="email" class="form-label ">Email</label>
       <% if (emailExist) { %>
-        <input type="email" name="email" placeholder="Email Already Exist" id="email" class="signup-input hi" >
+        <input type="email" name="email" required placeholder="Email Already Exist" id="email" class="signup-input hi" >
       <% }else{ %>
-      <input type="email" name="email"  id="email" class="signup-input hi" >
+      <input type="email" name="email"  required id="email" class="signup-input hi" >
       <% } %>
     </div>
     <div class="form-container">
       <label for="password" class="form-label">Password</label>
-      <input type="password" name="password" id="password" class="signup-input" >
+      <input type="password" name="password" id="password" required class="signup-input" >
     </div>
     <button class="signup-button">Sign Up</button>
     <div class="already" >Already have an account? <a href="/seller/login">log in here</a></div>
