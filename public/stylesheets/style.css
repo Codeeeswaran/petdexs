@@ -93,6 +93,8 @@ footer .link-container ul {
 .start-btn {
   position: absolute;
   top: 500px;
+  margin-top: 100px;
+  
 }
 
 .start {
@@ -220,10 +222,6 @@ footer .link-container ul {
     text-align: center; /* Centered text for better alignment */
   }
 
-  .start-btn {
-    margin-top: 200px; /* Added margin for better spacing */
-    text-align: center; /* Centered button for better alignment */
-  }
 
   .start {
     width: 150px; /* Adjusted button width for better fit on mobile */
