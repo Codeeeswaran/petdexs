@@ -107,13 +107,15 @@ a:hover  {
 
 
 .form-container input[type="tel"] ,
-.form-container input[type="number"] {
-    width: calc(50% - 5px); /* Adjusted width */
+.form-container .quantity-input
+ {
+    width: 150px; /* Adjusted width */
     padding: 10px;
     margin-bottom: 10px;
     border: 5px solid black;
     box-sizing: border-box;
 }
+
 
 
 .form-container button {
