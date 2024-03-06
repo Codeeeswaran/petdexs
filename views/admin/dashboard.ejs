@@ -25,7 +25,9 @@
             <button class="signup">sign up</button>-->
         </div> 
     </header>
-
+   </div>
+       <a href="/seller/logout" class="logout">LOG OUT</a>
+   </div>
     <div style="width: 100%; display: flex;justify-content: center;">
  <div class="container">
     <% if (sellers.length == 0) { %>
@@ -35,10 +37,10 @@
        <div class="veri">
         <div class="msg"><%= sellers[i].dataValues.name %></div>
         <a href="" class="accept"><object  type="image/svg+xml" data="/images/report.svg">
-        tick 
+        report 
         </object></a>
         <a href="" class="accept"><object  type="image/svg+xml" data="/images/history.svg">
-            tick 
+            history
             </object></a>
         <a href="/admin/delete/<%=sellers[i].dataValues.id  %>"  class="reject"><object  type="image/svg+xml" data="/images/wrong.svg">
             cross
