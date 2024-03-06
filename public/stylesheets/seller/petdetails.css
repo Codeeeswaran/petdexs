@@ -133,3 +133,15 @@ a{
   width: 20px; /* specify the desired width */
   height: auto; /* set height to auto to maintain aspect ratio */
 }
+
+.sold {
+  border: 5px solid black;
+  height: 25px;
+  width: 60px;
+  padding:5px 5px;
+}
+
+.sold:hover {
+  background-color: red;
+  color: black;
+}
