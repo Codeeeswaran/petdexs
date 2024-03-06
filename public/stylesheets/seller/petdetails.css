@@ -145,3 +145,10 @@ a{
   background-color: red;
   color: black;
 }
+
+.quantity {
+  border: 5px solid black;
+  height: 25px;
+  width: 40px;
+  padding:5px 5px;
+}
