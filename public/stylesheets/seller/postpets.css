@@ -106,8 +106,7 @@ a:hover  {
 }
 
 
-.form-container input[type="tel"] ,
- {
+.form-container input[type="tel"] {
     width: 150px; /* Adjusted width */
     padding: 10px;
     margin-bottom: 10px;
