@@ -179,6 +179,7 @@ footer .link-container ul {
     color: black;
     margin-left: 1200px;
     margin-top: 200px;
+    text-decoration: none;
   }
   
   .logout:hover {
