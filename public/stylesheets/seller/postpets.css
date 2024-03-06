@@ -101,9 +101,7 @@ a:hover  {
     gap: 15px;
 }
 
-.quantity {
-    display: flex;
-}
+
 
 
 .form-container input[type="tel"] {
