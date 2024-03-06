@@ -168,7 +168,6 @@ footer .link-container ul {
 }
 
 .logout {
-    align-self: center;
     width: 200px;
     text-align: center;
     padding: 10px 25px;
@@ -178,6 +177,8 @@ footer .link-container ul {
     border: solid 5px black;
     background-color:white;
     color: black;
+    margin-left: 900px;
+    margin-top: 200px;
   }
   
   .logout:hover {
