@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Details</title>
+  <link rel="stylesheet" href="/stylesheets/nav.css">
+ <link rel="stylesheet" href="/stylesheets/seller/yourpets.css">
+ <script src="script.js"></script>
+<body>
+   <%- include('components/nav') %>
+
+    <div class="container">
+        
+        <div class="pet-container">
+             <div class="petwrapper">
+            
+           </div> 
+            <div class="pet-row">
+              <% for( let i = 0; i < pets.length; i++ ) { %>
+                <a href="/seller/<%=pets[i].dataValues.sellerId  %>/petdetails/<%=pets[i].dataValues.id %>"><div class="pet-details">
+        <div class="pet-image"><img src="<%= pets[i].dataValues.img %>" alt="<%= pets[i].dataValues.name %>"></div>
+        <div class="pet-name"><%= pets[i].dataValues.name %></div>
+        <div class="pet-breed"><%= pets[i].dataValues.breed %></div>
+        <div class="pet-coat-color"><%= pets[i].dataValues.color %></div>
+      </div>
+    </a>
+    <% } %>
+      </div>
+    </div>
+    </div>
+     
+    
+      <!-- Add more pet-details divs for additional pets -->
+      
+   
+<div style="width: 100%;margin-top: 10px;">
+    <%- include('../components/footer') %>
+  </div>
+</body>
+</html>
