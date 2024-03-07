@@ -35,6 +35,20 @@
                 <div class="a"><label for="age">AGE</label>
                 <input type="number" id="age"  value="<%= pet.age %>" name="age" min="0" class="age-input"></div>
             </div>
+
+            <div class="form-group">
+                <label for="owner_name">OWNER'S NAME</label>
+                <input type="text" id="owner_name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact_number">CONTACT NUMBER</label>
+            <input type="tel" id="contact_number" name="contact_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">QUANTITY</label>
+                <input type="number" id="quantity" name="quantity" min="0" class="quantity-input">
+            </div>
+
             <div class="form-group">
                 <label for="description">DESCRIPTION</label>
                 <textarea id="description" name="description" rows="4" required><%= pet.description %></textarea>

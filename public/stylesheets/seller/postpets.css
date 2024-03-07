@@ -104,6 +104,24 @@ a:hover  {
 
 
 
+.form-container input[type="tel"] {
+    width: calc(50% - 5px); /* Adjusted width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+
+.form-container .quantity-input
+ {
+    width: 90px; /* Adjusted width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 5px solid black;
+    box-sizing: border-box;
+    margin-right: 305px;
+}
+
 .form-container button {
     background-color:white;
     color: black;
