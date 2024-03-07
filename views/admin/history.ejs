@@ -17,14 +17,18 @@
             
            </div> 
             <div class="pet-row">
+              <% if (pets.length==0) { %>
+               <h1>No Pets </h1>
+              <% }else{ %>
               <% for( let i = 0; i < pets.length; i++ ) { %>
-                <a href="/seller/<%=pets[i].dataValues.sellerId  %>/petdetails/<%=pets[i].dataValues.id %>"><div class="pet-details">
-        <div class="pet-image"><img src="<%= pets[i].dataValues.img %>" alt="<%= pets[i].dataValues.name %>"></div>
+                <a href=""><div class="pet-details">
+        <div class="pet-image"><img src="<%= pets[i].dataValues.img %>" style=<%= pets[i].dataValues.sold ? 'opacity:0.5':"" %> alt="<%= pets[i].dataValues.name %>"></div>
         <div class="pet-name"><%= pets[i].dataValues.name %></div>
         <div class="pet-breed"><%= pets[i].dataValues.breed %></div>
         <div class="pet-coat-color"><%= pets[i].dataValues.color %></div>
       </div>
     </a>
+    <% } %>
     <% } %>
       </div>
     </div>

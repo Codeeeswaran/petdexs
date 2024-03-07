@@ -31,22 +31,15 @@
             </div>
             <div class="form-group">
                 <label class="coat-color-label" for="coat_color">COAT COLOR</label>
-                <input type="text" id="coat_color" name="color" class="coat-color-input">
+                <input type="text" id="coat_color" name="color" required class="coat-color-input">
                 <div class="a"><label for="age">AGE</label>
-                <input type="number" id="age" name="age" min="0" class="age-input"></div>
+                <input type="number" id="age" name="age" min="0" required class="age-input"></div>
             </div>
             
-            <div class="form-group">
-                <label for="owner_name">OWNER'S NAME</label>
-                <input type="text" id="owner_name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="contact_number">CONTACT NUMBER</label>
-            <input type="tel" id="contact_number" name="contact_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-            </div>
+           
             <div class="form-group">
                 <label for="quantity">QUANTITY</label>
-                <input type="number" id="quantity" name="quantity" min="0" class="quantity-input">
+                <input type="number" id="quantity" name="quantity" min="0" required class="quantity-input">
             </div>
             <div class="form-group">
                 <label for="description">DESCRIPTION</label>
@@ -54,7 +47,7 @@
             </div>
             <div class="form-group">
                 <label for="pet_image">UPLOAD PET IMAGE</label>
-                <input type="file" id="pet_image" name="file">
+                <input type="file" id="pet_image" name="file" required>
             </div>
             <button type="submit">SUBMIT</button>
         </form>

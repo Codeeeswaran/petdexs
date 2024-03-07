@@ -26,7 +26,7 @@
         </div> 
     </header>
    </div>
-       <a href="/seller/logout" class="logout">LOG OUT</a>
+       <a href="/admin/logout" class="logout">LOG OUT</a>
    </div>
     <div style="width: 100%; display: flex;justify-content: center;">
  <div class="container">
@@ -36,10 +36,10 @@
         <% for( let i = 0; i < sellers.length; i++ ) { %>
        <div class="veri">
         <div class="msg"><%= sellers[i].dataValues.name %></div>
-        <a href="" class="accept"><object  type="image/svg+xml" data="/images/report.svg">
+        <a href="/admin/report/<%= sellers[i].dataValues.id %>" class="accept"><object  type="image/svg+xml" data="/images/report.svg">
         report 
         </object></a>
-        <a href="" class="accept"><object  type="image/svg+xml" data="/images/history.svg">
+        <a href="/admin/history/<%= sellers[i].dataValues.id %>" class="accept"><object  type="image/svg+xml" data="/images/history.svg">
             history
             </object></a>
         <a href="/admin/delete/<%=sellers[i].dataValues.id  %>"  class="reject"><object  type="image/svg+xml" data="/images/wrong.svg">
@@ -63,9 +63,9 @@
         </div>
         <div class="link-container">
             <ul>
-                <li><a href="/home/index.html">home</a></li>
-                <li><a href="/about/index.html">about</a></li>
-                <li><a href="/contact/index.html">contact</a></li>
+                <li><a href="/">home</a></li>
+                <li><a href="/about">about</a></li>
+                <li><a href="/contact">contact</a></li>
             </ul>
         </div>
         <div class="svg">

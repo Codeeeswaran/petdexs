@@ -33,8 +33,24 @@ const petModel=sequelizeConfig.define('pets',{
         type:DataTypes.TEXT,
         allowNull:false,
     },
+    quantity:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+    },
+    total:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    sell:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
     img:{
         type:DataTypes.STRING,
+        allowNull:false,
+    },
+    sold:{
+        type:DataTypes.BOOLEAN,
         allowNull:false,
     }
 });

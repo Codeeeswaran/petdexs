@@ -6,7 +6,7 @@
   <title>Sign Up Form</title>
  <link rel="stylesheet" href="/stylesheets/nav.css">
  <link rel="stylesheet" href="/stylesheets/seller/petdetails.css">
- <script src="script.js"></script>
+ <!-- <script src="script.js"></script> -->
 <body>
   
 <%- include('components/nav') %>
@@ -19,8 +19,8 @@
           <div class="pet-description"><%=pet?.description  %></div>
         </div>
         <div class="updel">
-            <a href="" class="quantity">12</a>
-            <a href="" class="sold">SOLD OUT</a>
+            <a href="" class="quantity"><%=pet?.quantity  %></a>
+            <a href="/seller/<%= pet.sellerId %>/soldout/<%= pet.id %>" class="sold">SOLD OUT</a>
             <a href="/seller/<%= pet.sellerId %>/update/<%= pet.id %>" class="update">UPDATE</a>
             <a href="/seller/<%= pet.sellerId %>/delete/<%= pet.id %>" class="delete"><object type="image/svg+xml" data="/images/deleteblack.svg">
                 linkedin logo

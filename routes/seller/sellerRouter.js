@@ -66,6 +66,7 @@ router.get("/login", async (req, res) => {
     if (findId) {
       res.redirect(`/seller/${id}/postpets`);
     } else {
+      res.clearCookie('seller');
       res.render("seller/login", { emailExist: true, passwordError: false });
     }
   } else {
@@ -116,7 +117,7 @@ router.get("/:id/postpets", async (req, res) => {
 router.post("/:id/postpets", upload.single("file"), async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, breed, color, age, description } = req.body;
+    const { name, breed, color, age, description, quantity } = req.body;
 
     /* The line `const fileBuffer = req.file.buffer.toString("base64");` is converting the file
        buffer of the uploaded file into a base64 encoded string. */
@@ -141,7 +142,11 @@ router.post("/:id/postpets", upload.single("file"), async (req, res) => {
         description: description,
         color: color,
         sellerId: id,
+        quantity: quantity,
+        total: quantity,
+        sell: 0,
         img: fileUpload.secure_url,
+        sold: false,
       })
       .then(() => {
         res.redirect(`/seller/${id}/yourpets`);
@@ -191,6 +196,27 @@ router.get("/:id/petdetails/:petid", async (req, res) => {
   }
 });
 
+router.get("/:id/soldout/:petid", async (req, res) => {
+  const { id, petid } = req.params;
+
+  if (req.cookies.seller) {
+    const findPets = await petModel.update(
+      {
+        sold: true,
+      },
+      {
+        where: {
+          id: petid,
+        },
+      }
+    ).then(()=>{
+      res.redirect(`/seller/${id}/yourpets`)
+    })
+  } else {
+    res.redirect("/seller/login");
+  }
+});
+
 router.get("/:id/delete/:petid", async (req, res) => {
   const { id, petid } = req.params;
   const findPets = await petModel.findOne({
@@ -231,15 +257,32 @@ router.get("/:id/update/:petid", async (req, res) => {
 router.post("/:id/update/:petid", upload.single("file"), async (req, res) => {
   try {
     const { id, petid } = req.params;
-    const { name, breed, color, age, description } = req.body;
+    const { name, breed, color, age, description, quantity } = req.body;
+
+    const findPet = await petModel.findOne({
+      where: {
+        id: petid,
+      },
+    });
 
     if (!req.file) {
       const updatePet = await petModel
-        .update(req.body, {
-          where: {
-            id: petid,
+        .update(
+          {
+            name: name,
+            breed: breed,
+            color: color,
+            age: age,
+            description: description,
+            quantity: quantity,
+            sell: findPet.dataValues.total - quantity,
           },
-        })
+          {
+            where: {
+              id: petid,
+            },
+          }
+        )
         .then(() => {
           res.redirect(`/seller/${id}/yourpets`);
         })
@@ -272,6 +315,8 @@ router.post("/:id/update/:petid", upload.single("file"), async (req, res) => {
             color: color,
             sellerId: id,
             img: fileUpload.secure_url,
+            quantity: quantity,
+            sell: findPet.dataValues.total - quantity,
           },
           {
             where: {
@@ -292,9 +337,9 @@ router.post("/:id/update/:petid", upload.single("file"), async (req, res) => {
 });
 
 
-router.get('/logout',(req,res)=>{
-  res.clearCookie('seller');
-  res.redirect('/seller/login');
-})
+router.get("/logout", (req, res) => {
+  res.clearCookie("seller");
+  res.redirect("/seller/login");
+});
 
 module.exports = router;
